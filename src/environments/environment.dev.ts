@@ -1,9 +1,13 @@
 import { Environment } from "./environment";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 export const DevEnvironment: Environment = {
-    db_uri: 'mongodb+srv://arnoldmabope:Arnold%401@cluster0.h6jgrer.mongodb.net/',
+    db_uri:process.env.DB_URI!,
+
     // gmail_auth: {
     //   user: '********',
     //   pass: '********',
-    jwt_secret_key:'secretkeydev',
+    jwt_secret_key:process.env.JWT_SECRET_KEY!,
   };
